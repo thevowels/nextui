@@ -1,7 +1,6 @@
 import { Button } from "@nextui-org/button";
 import { FaArrowRight } from "react-icons/fa";
 import { Snippet } from "@nextui-org/snippet";
-
 import { subtitle, title } from "@/components/primitives.ts";
 import { GithubIcon } from "@/components/icons.tsx";
 export default function Hero() {

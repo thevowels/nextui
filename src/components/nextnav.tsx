@@ -8,6 +8,7 @@ import {
   NavbarMenuToggle,
 } from "@nextui-org/navbar";
 import { Link } from "@nextui-org/link";
+import { Chip } from "@nextui-org/chip";
 import {
   Dropdown,
   DropdownItem,
@@ -24,7 +25,7 @@ import { ThemeSwitch } from "@/components/theme-switch.tsx";
 
 export const NextNav = () => {
   return (
-    <Navbar maxWidth="2xl" position="sticky" className={"px-10"}>
+    <Navbar className={"px-10"} maxWidth="2xl" position="sticky">
       <NavbarBrand>
         <NextLogo />
         <Dropdown>
@@ -32,10 +33,10 @@ export const NextNav = () => {
             <DropdownTrigger>
               <Button
                 disableRipple
-                className="p-0 bg-transparent data-[hover=true]:bg-transparent"
+                className="p-0 bg-default-400/20 text-sm data-[hover=true]:bg-transparent h-7 rounded-full min-w-[100px] max-w-[100px]"
                 endContent={<IoChevronDownSharp />}
                 radius="sm"
-                variant="light"
+                variant="flat"
               >
                 v2.0.0
               </Button>
@@ -64,10 +65,25 @@ export const NextNav = () => {
             </DropdownItem>
           </DropdownMenu>
         </Dropdown>
+        <Chip
+          className={
+            " bg-primary-100/50 cursor-pointer border-1 border-primary-100/80 ml-2"
+          }
+          classNames={{
+            content:
+              "font-semibold text-primary-500 dark:text-primary-600 text-xs ",
+          }}
+          variant="flat"
+        >
+          New version v2.6.0&nbsp;
+          <span aria-label="emoji" role="img" className={"ps-2"}>
+            🔥
+          </span>
+        </Chip>
       </NavbarBrand>
       <NavbarContent className="hidden sm:flex gap-3 " justify="end">
         <NavbarItem>
-          <Link color="foreground" href="#" className={clsx("font-bold",)}>
+          <Link className={clsx("font-bold")} color="foreground" href="#">
             Docs
           </Link>
         </NavbarItem>
@@ -91,7 +107,7 @@ export const NextNav = () => {
             Roadmap
           </Link>
         </NavbarItem>
-          <ThemeSwitch/>
+        <ThemeSwitch />
       </NavbarContent>
       <NavbarContent className="sm:hidden basis-1 pl-4" justify="end">
         <Link isExternal href={siteConfig.links.github}>
