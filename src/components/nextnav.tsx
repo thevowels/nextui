@@ -24,7 +24,7 @@ import { ThemeSwitch } from "@/components/theme-switch.tsx";
 
 export const NextNav = () => {
   return (
-    <Navbar maxWidth="xl" position="sticky">
+    <Navbar maxWidth="2xl" position="sticky" className={"px-10"}>
       <NavbarBrand>
         <NextLogo />
         <Dropdown>
