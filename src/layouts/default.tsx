@@ -1,6 +1,6 @@
 import { Link } from "@nextui-org/link";
 
-import { Navbar } from "@/components/navbar";
+// import { Navbar } from "@/components/navbar";
 import {NextNav} from "@/components/nextnav.tsx";
 import {CtaBanner} from "@/components/ctabanner.tsx";
 

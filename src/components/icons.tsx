@@ -32,7 +32,7 @@ export const NextLogo: React.FC<IconSvgProps> = ({
     fill="none"
     height={size || height}
     viewBox="0 0 96 32"
-    width={size * 4 || height * 3}
+    width={size * 4 || height}
     {...props}
   >
     <path
