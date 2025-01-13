@@ -1,8 +1,8 @@
 import { subtitle, title } from "@/components/primitives.ts";
 import {Button} from "@nextui-org/button";
 import { FaArrowRight } from "react-icons/fa";
-import {Code} from "@nextui-org/react";
-import { GoCopy } from "react-icons/go";
+import {Snippet} from "@nextui-org/snippet";
+import {GithubIcon} from "@/components/icons.tsx";
 
 export default function Hero() {
   return (
@@ -20,18 +20,24 @@ export default function Hero() {
           Beautiful, fast and modern React UI library.
         </div >
           <div className={" flex flex-col items-center md:flex-row gap-4 "}>
-              <Button className={"w-full md:w-auto"} color="primary" radius={"full"} size={"lg"} endContent={<FaArrowRight className={"group-data-[hover=true]:translate-x-0.5 outline-none transition-transform"}/>}>Get Started</Button>
-              <Code radius={"full"} size={"md"}
-                className={"text-small px-2 py-3 w-full md:w-auto"}
-              >
-                  <span className={"select-none text-large me-2"}>
-                      $
-                  </span>
-                  <span>
-                      npm install @nextui-org/react
-                  </span>
-                  <GoCopy className="text-xl inline-block ms-4 me-2" />
-              </Code>
+              <Button className={"w-full md:w-auto md:h-11"} color="primary" radius={"full"} size={"lg"} endContent={<FaArrowRight className={"group-data-[hover=true]:translate-x-0.5 outline-none transition-transform"}/>}>Get Started</Button>
+              {/*<Code radius={"full"} size={"md"}*/}
+              {/*  className={"text-small px-2 py-3 w-full md:w-auto"}*/}
+              {/*>*/}
+              {/*    <span className={"select-none text-large me-2"}>*/}
+              {/*        $*/}
+              {/*    </span>*/}
+              {/*    <span>*/}
+              {/*        npm install @nextui-org/react*/}
+              {/*    </span>*/}
+              {/*    <GoCopy className="text-xl inline-block ms-4 me-2" />*/}
+              {/*</Code>*/}
+              <Snippet className={"rounded-full hidden md:flex"}>
+                  npx nextui-cli@latest init
+              </Snippet>
+              <Button className={" md:hidden rounded-full w-full h-11"} variant={"bordered"} startContent={<GithubIcon/>}>
+                Github
+              </Button>
 
           </div>
 
