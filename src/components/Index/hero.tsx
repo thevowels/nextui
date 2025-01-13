@@ -6,7 +6,7 @@ import { GoCopy } from "react-icons/go";
 
 export default function Hero() {
   return (
-    <section className="flex flex-row container h-[calc(100vh_-_64px)] flex-no-wrap justify-between max-w-full">
+    <section className="flex flex-row container h-[calc(100vh_-_64px)] 2xl:h-[calc(84vh_-_64px)] flex-no-wrap justify-between max-w-full">
       <div className="flex flex-col inline-block max-w-4xl md:max-w-8xl lg:max-w-2xl  text-center md:text-start justify-center align-end">
         <div>
           <span className={title({size:"lg"})}>Make&nbsp;</span>

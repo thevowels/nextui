@@ -59,6 +59,25 @@ export const siteConfig = {
       href: "/logout",
     },
   ],
+  cards:[
+    {
+      title:"Themable",
+      description:"Provides a plugin to customize default themes, you can change all semantic tokens or create an entire new theme."
+
+    },
+    {
+      title:"Fast",
+      description:"Provides a plugin to customize default themes, you can change all semantic tokens or create an entire new theme."
+    },
+    {
+      title:"Light & Dark UI",
+      description:"Provides a plugin to customize default themes, you can change all semantic tokens or create an entire new theme."
+    },
+    {
+      title:"Unique DX",
+      description:"Provides a plugin to customize default themes, you can change all semantic tokens or create an entire new theme."
+    },
+  ],
   links: {
     github: "https://github.com/nextui-org/nextui",
     twitter: "https://twitter.com/getnextui",
