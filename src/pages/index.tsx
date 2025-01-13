@@ -5,7 +5,7 @@ import { button as buttonStyles } from "@nextui-org/theme";
 
 import { siteConfig } from "@/config/site";
 import { title, subtitle } from "@/components/primitives";
-import { GithubIcon } from "@/components/icons";
+import { GithubIcon } from "@/components/icons.tsx";
 import Hero from "@/components/Index/hero.tsx";
 import Cards from "@/components/Index/Cards.tsx";
 import Supports from "@/components/Index/supports.tsx";

@@ -22,8 +22,8 @@ import {
   DiscordIcon,
   HeartFilledIcon,
   SearchIcon,
-} from "@/components/icons";
-import { Logo } from "@/components/icons";
+} from "@/components/icons.tsx";
+import { Logo } from "@/components/icons.tsx";
 
 export const Navbar = () => {
   const searchInput = (
