@@ -8,12 +8,14 @@ import { title, subtitle } from "@/components/primitives";
 import { GithubIcon } from "@/components/icons";
 import Hero from "@/components/Index/hero.tsx";
 import Cards from "@/components/Index/Cards.tsx";
+import Supports from "@/components/Index/supports.tsx";
 
 export default function IndexPage() {
   return (
     <div className={"flex flex-col items-center justify-center"}>
       <Hero />
       <Cards/>
+      <Supports/>
 
       <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
         <div className="inline-block max-w-lg text-center justify-center">

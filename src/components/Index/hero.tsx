@@ -20,7 +20,7 @@ export default function Hero() {
           Beautiful, fast and modern React UI library.
         </div >
           <div className={" flex flex-col items-center md:flex-row gap-4 "}>
-              <Button className={"w-full md:w-auto"} color="primary" radius={"full"} size={"lg"} endContent={<FaArrowRight/>}>Get Started</Button>
+              <Button className={"w-full md:w-auto"} color="primary" radius={"full"} size={"lg"} endContent={<FaArrowRight className={"group-data-[hover=true]:translate-x-0.5 outline-none transition-transform"}/>}>Get Started</Button>
               <Code radius={"full"} size={"md"}
                 className={"text-small px-2 py-3 w-full md:w-auto"}
               >
