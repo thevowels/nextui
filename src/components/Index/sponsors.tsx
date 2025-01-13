@@ -1,6 +1,5 @@
 
 import {Story2DesignLogo, CodeRabbitLogo} from "@/components/nextIcons/sponsors.tsx";
-import {Button} from "@nextui-org/button";
 import {Link} from "@nextui-org/link";
 
 const sponsors:{name:string,href:string,logo:any}[] = [

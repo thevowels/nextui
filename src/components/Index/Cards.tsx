@@ -1,6 +1,4 @@
-import { siteConfig } from "@/config/site";
 import {Card, CardHeader, CardBody, } from "@nextui-org/card";
-import { HiOutlineLightningBolt } from "react-icons/hi";
 import Contents from "@/content/landing";
 
 export default function Cards() {
@@ -8,7 +6,7 @@ export default function Cards() {
     return(
         <div className={"mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4"}>
 
-            {Contents.topFeatures.map((card, index : number)=>(
+            {Contents.topFeatures.map((card)=>(
                 <Card key={card.title} isBlurred isPressable>
                     <CardHeader className={"flex gap-3"}>
                         <div className={" text-2xl bg-secondary-100/80  rounded-full p-2 text-[#FF1CF7]"}>
