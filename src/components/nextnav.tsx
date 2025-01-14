@@ -25,7 +25,7 @@ import { ThemeSwitch } from "@/components/theme-switch.tsx";
 
 export const NextNav = () => {
   return (
-    <Navbar className={"px-10"} maxWidth="2xl" position="sticky">
+    <Navbar className={" justify-between"} maxWidth="2xl" position="sticky">
       <NavbarBrand>
         <NextLogo />
         <Dropdown>
@@ -33,7 +33,7 @@ export const NextNav = () => {
             <DropdownTrigger>
               <Button
                 disableRipple
-                className="p-0 bg-default-400/20 text-sm data-[hover=true]:bg-transparent h-7 rounded-full min-w-[100px] max-w-[100px]"
+                className="hidden md:flex p-0 bg-default-400/20 text-sm data-[hover=true]:bg-transparent h-7 rounded-full min-w-[100px] max-w-[100px]"
                 endContent={<IoChevronDownSharp />}
                 radius="sm"
                 variant="flat"
@@ -67,7 +67,7 @@ export const NextNav = () => {
         </Dropdown>
         <Chip
           className={
-            " bg-primary-100/50 cursor-pointer border-1 border-primary-100/80 ml-2"
+            " hidden lg:flex bg-primary-100/50 cursor-pointer border-1 border-primary-100/80 ml-2"
           }
           classNames={{
             content:
