@@ -13,7 +13,7 @@ import {
   KeyboardOpenBoldIcon,
   InfoBoldIcon,
 } from "@/components/nextIcons";
-import {Card, CardBody, CardHeader} from "@nextui-org/card";
+import {Card, CardHeader} from "@nextui-org/card";
 import {Tooltip} from "@nextui-org/react";
 import {Button} from "@nextui-org/button";
 
