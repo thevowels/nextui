@@ -67,22 +67,36 @@ export default function Accessibility() {
         </div>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {a11yItems.map((item)=>(<Card key={item.title} className={"bg-white dark:bg-default-400/10"}>
-            <CardHeader className={"font-semibold text-base"}>
-              <div className={"text-2xl p-2 bg-default-100 dark:bg-transparent text-default-500/50"}>
-                {item.icon}
-              </div>
-              {item.title}
-            </CardHeader>
-          </Card>))}
+        <div className="flex flex-col mt-8 lg:mt-16 gap-6">
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {a11yItems.map((item) => (<Card key={item.title} className={"bg-white dark:bg-default-400/10 "}>
+              <CardHeader className={"font-semibold text-base"}>
+                <div className={"text-2xl p-2 bg-default-100 dark:bg-transparent text-default-500/50"}>
+                  {item.icon}
+                </div>
+                {item.title}
+              </CardHeader>
+            </Card>))}
+          </div>
+          <Button
+              aria-label="Learn more about accessibility"
+              className="max-w-fit"
+              color="success"
+              radius="full"
+              size="sm"
+              variant="flat"
+          >
+            Learn more
+          </Button>
         </div>
         <div>
-          <div className={"flex relative  w-full h-auto min-h-[200px] lg:min-h-[390px] max-h-[300px] lg:pt-24 items-center lg:items-start justify-center  bg-gradient-to-r from-[#4ADE80] to-[#06B6D4] rounded-2xl"}>
+          <div
+              className={"flex relative  w-full h-auto min-h-[200px] lg:min-h-[390px] max-h-[300px] lg:pt-24 items-center lg:items-start justify-center  bg-gradient-to-r from-[#4ADE80] to-[#06B6D4] rounded-2xl"}>
             <Tooltip
-              className={"text-xs px-2 "}
-              content={"show Code"}
-              placement="top"
+                className={"text-xs px-2 "}
+                content={"show Code"}
+                placement="top"
             >
               <Button isIconOnly
                       aria-label="Show code"
