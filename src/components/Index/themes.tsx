@@ -135,7 +135,6 @@ const CustomThemesExample = ({
         <CardBody className="relative flex-col md:flex-row md:items-center gap-4 md:gap-9 overflow-visible">
           <div className={slots.imageWrapper()}>
             <Image
-                fill
               removeWrapper
               className={slots.img()}
               sizes={"100vw"}

@@ -10,6 +10,7 @@ import Hero from "@/components/Index/hero.tsx";
 import Cards from "@/components/Index/Cards.tsx";
 import Sponsors from "@/components/Index/sponsors.tsx";
 import Themes from "@/components/Index/themes.tsx";
+import Accessibility from "@/components/Index/accessibility.tsx";
 
 export default function IndexPage() {
   return (
@@ -23,6 +24,8 @@ export default function IndexPage() {
           <Themes/>
 
           {/*Accessibility*/}
+          <Accessibility/>
+
           {/*Dark Mode*/}
 
           {/*Customization*/}
