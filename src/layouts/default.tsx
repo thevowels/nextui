@@ -10,7 +10,7 @@ export default function DefaultLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="relative flex flex-col h-screen">
+    <div className="relative flex flex-col h-100vh">
       <CtaBanner />
       <NextNav />
       {/*<Navbar />*/}
