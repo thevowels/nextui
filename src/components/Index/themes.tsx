@@ -1,4 +1,7 @@
 import { Tabs, Tab, Card, CardBody } from "@nextui-org/react";
+import { useState, useMemo } from "react";
+
+import { shopCartStyles } from "./shopcartstyles";
 
 import {
   title,
@@ -66,33 +69,39 @@ const themesTabs = (isMobile: boolean) => [
 //   elegant: "46-59",
 //   retro: "66-84",
 // };
+type Theme = "nextui" | "modern" | "elegant" | "retro";
+type Tab = { id: string; title: () => JSX.Element; icon: () => JSX.Element };
 
-export default function Themes() {
-  const isMobile: boolean = false;
-  const tabs = themesTabs(isMobile);
+const CustomThemesExample = ({
+  tabs,
+  selectedTheme,
+  onChangeTheme,
+}: {
+  tabs: Tab[];
+  selectedTheme: Theme;
+  onChangeTheme: (theme: Theme) => void;
+}) => {
+  const [liked, setLiked] = useState(false);
+
+  const slots = useMemo(
+    () =>
+      shopCartStyles({
+        theme: selectedTheme as Theme,
+      }),
+    [selectedTheme],
+  );
+
+  const onSelectionChange = (value: React.Key) => {
+    onChangeTheme(value as Theme);
+  };
 
   return (
-    <section className={sectionWrapper({ class: "mt-24 lg:mt-56" })}>
-      <div className={"flex flex-col gap-8"}>
-        <div>
-          <div className={titleWrapper()}>
-            <p className={title({ size: "lg" })}>Apply your own</p>
-            <div>
-              <p className={title({ color: "blue", size: "lg" })}>theming </p>
-              <p className={title({ size: "lg" })}>decisions.</p>
-            </div>
-          </div>
-          <p className={subtitle()}>
-            NextUI provides a custom TailwindCSS plugin that allows you to
-            customize the default themes or create your own.
-          </p>
-        </div>
+      <div className="flex flex-col gap-6 ">
 
-        <div className={"grid grid-cols-1 lg:grid-cols-2 gap-4"}>
-          <Tabs
-            aria-label="Dynamic tabs"
+        <Tabs
             disableAnimation
             disableCursorAnimation
+            aria-label="Dynamic tabs"
             classNames={{
               base: "w-full",
               tab: "px-0 w-fit h-auto data-[selected=true]:bg-transparent",
@@ -101,31 +110,104 @@ export default function Themes() {
             }}
             items={tabs}
             variant="light"
-          >
-            {(item) => (
+        >
+          {(item) => (
               <Tab
-                key={item.id}
-                title={
-                  <div className={"!bg-transparent"}>
-                    <div
-                      className={
-                        "flex flex-col justify-center items-center gap-2"
-                      }
-                    >
-                      {item.icon()}
-                      {item.title()}
+                  key={item.id}
+                  title={
+                    <div className={"!bg-transparent"}>
+                      <div
+                          className={"flex flex-col justify-center items-center gap-2"}
+                      >
+                        {item.icon()}
+                        {item.title()}
+                      </div>
                     </div>
-                  </div>
-                }
+                  }
               >
                 <Card>
                   <CardBody>{item.id}</CardBody>
                 </Card>
               </Tab>
-            )}
-          </Tabs>
-        </div>
+          )}
+        </Tabs>
       </div>
-    </section>
+        );
+        };
+
+        export default function Themes() {
+        const isMobile: boolean = false;
+        const tabs = themesTabs(isMobile);
+
+        const [selectedTheme, setSelectedTheme] = useState<Theme>("nextui");
+
+        return (
+        <section className={sectionWrapper({class: "mt-24 lg:mt-56"})}>
+        <div className={"flex flex-col gap-8"}>
+          <div>
+            <div className={titleWrapper()}>
+              <p className={title({size: "lg"})}>Apply your own</p>
+              <div>
+                <p className={title({color: "blue", size: "lg"})}>theming </p>
+                <p className={title({size: "lg"})}>decisions.</p>
+              </div>
+            </div>
+            <p className={subtitle()}>
+              NextUI provides a custom TailwindCSS plugin that allows you to
+              customize the default themes or create your own.
+            </p>
+          </div>
+
+          <div className={"grid grid-cols-1 lg:grid-cols-2 gap-4"}>
+            <CustomThemesExample
+                selectedTheme={"nextui"}
+                tabs={tabs}
+                onChangeTheme={setSelectedTheme}
+            />
+            <div>
+
+              asdfasddfk
+              asdfas
+              dfa
+              sdf
+            </div>
+            {/*<Tabs*/}
+            {/*  disableAnimation*/}
+            {/*  disableCursorAnimation*/}
+            {/*  aria-label="Dynamic tabs"*/}
+            {/*  classNames={{*/}
+            {/*    base: "w-full",*/}
+            {/*    tab: "px-0 w-fit h-auto data-[selected=true]:bg-transparent",*/}
+            {/*    tabList: "w-full justify-start gap-8",*/}
+            {/*    tabContent: "text-default-400 text-base",*/}
+            {/*  }}*/}
+            {/*  items={tabs}*/}
+            {/*  variant="light"*/}
+            {/*>*/}
+            {/*  {(item) => (*/}
+            {/*    <Tab*/}
+            {/*      key={item.id}*/}
+            {/*      title={*/}
+            {/*        <div className={"!bg-transparent"}>*/}
+            {/*          <div*/}
+            {/*            className={*/}
+            {/*              "flex flex-col justify-center items-center gap-2"*/}
+            {/*            }*/}
+            {/*          >*/}
+            {/*            {item.icon()}*/}
+            {/*            {item.title()}*/}
+            {/*          </div>*/}
+            {/*        </div>*/}
+            {/*      }*/}
+            {/*    >*/}
+            {/*      <Card>*/}
+            {/*        <CardBody>{item.id}</CardBody>*/}
+            {/*      </Card>*/}
+            {/*    </Tab>*/}
+            {/*  )}*/}
+            {/*</Tabs>*/}
+          </div>
+        </div>
+      </section>
   );
 }
